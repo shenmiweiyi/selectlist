@@ -1,0 +1,1 @@
+jQuery selectlist is a plugin of cosmetic, styleable replacement for SELECT elements.
