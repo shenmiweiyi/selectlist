@@ -1,8 +1,8 @@
-## selectlist
+# selectlist
 
 selectlist is a jQuery plugin of customizable, styleable replacement for native SELECT elements.
 
-### Features
+## Features
 
 * Support standard HTML **select** tag
 * Support keyborad options(UP,DOWN,ESC,ENTER)
