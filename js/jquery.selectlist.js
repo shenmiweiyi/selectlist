@@ -337,6 +337,9 @@
 								$(this)
 									.val($selectedItem.text())
 									.prev().prev().val($selectedItem.attr('data-value'));
+								if ($.isFunction(that.settings.onChange)) {
+                                    that.settings.onChange();
+                                }
 								break;
 							//Esc
 							case 27:
