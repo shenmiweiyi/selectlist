@@ -1,15 +1,15 @@
-## selectlist
+# selectlist
 
 selectlist is a jQuery plugin of customizable, styleable replacement for native SELECT elements.
 
-### Features
+## Features
 
 * Support standard HTML **select** tag
 * Support keyborad options(UP,DOWN,ESC,ENTER)
 * Support custom style
 * Support IE7+,Firefox3+,Chrome and Oprea
 
-### Usage
+## Usage
 
 Link to the **jQuery.js** file:
 
@@ -44,10 +44,10 @@ $('#education').selectlist({
 })
 ```
 
-### Notes
+## Notes
 The selectlist plugin will according to match the native select on a page, the automatically generated simulation select, according to the native select the **name** and **id** attribute stored and added to the original list (it does not destroy the native defined properties).
 native to the select is **the name and id attribute must be set and must be consistent** (for compatibility linkage select ).
 
-### License
+## License
 
 Copyright © 2015 YuChao Liu Licensed under the MIT license.
