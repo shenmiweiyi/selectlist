@@ -382,7 +382,7 @@
 					.children('.select-button').removeAttr('disabled');
 					
 				//绑定单击选项事件
-				$(selectID + ' li').mousedown(function(event){
+				$(selectID + ' li').click(function(event){
 					event.stopPropagation();
 					$(this)
 						.addClass('selected').siblings().removeClass('selected')
