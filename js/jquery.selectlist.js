@@ -412,9 +412,12 @@
         this.each(function() {
             if (!$.data(this, "plugin_" + pluginName)) {
                 $.data(this, "plugin_" + pluginName, new SelectList(this, options));
-				if(!options.topPosition){
+                		if (options == undefined) {
+		                    return;
+		                }
+				else if (!options.topPosition) {
 					options.zIndex--;
-				}else{
+				} else{
 					options.zIndex++;
 				};				
 			}
