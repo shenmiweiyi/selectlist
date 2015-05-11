@@ -62,7 +62,7 @@
     max-height: 240px;
   }
   .select-list ul li{
-    width: 230px;
+    width: auto;
     height: 34px;
     padding-left: 10px;
     cursor: pointer;
