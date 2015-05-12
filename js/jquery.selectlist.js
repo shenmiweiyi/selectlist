@@ -318,7 +318,7 @@
                         event.stopPropagation();
                         $(this).children('.select-list').slideToggle(showSpeed);
                     })
-                    .on('focusin',function(){
+                    .on('focusin','input[type="button"]',function(){
                         $('.select-wrapper').children('.select-list').slideUp(showSpeed);
                     })
                     .on('keyup','input[type="button"]',function(event){
