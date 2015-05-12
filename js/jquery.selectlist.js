@@ -319,7 +319,7 @@
                         $(this).children('.select-list').slideToggle(showSpeed);
                     })
                     .on('focusin',function(){
-                        $(this).siblings('.select-wrapper').children('.select-list').slideUp(showSpeed);
+                        $('.select-wrapper').children('.select-list').slideUp(showSpeed);
                     })
                     .on('keyup','input[type="button"]',function(event){
                         //缓存第一个被选中的值
