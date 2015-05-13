@@ -1,37 +1,34 @@
 <!doctype html>
 <html><head>
 <meta charset="utf-8">
-<title>模拟下拉列表</title>
+<title>jquery selectlist plugin</title>
 <link rel="stylesheet" type="text/css" href="css/jquery.selectlist.css">
 </head>
 
 <body>
-<select id="edu1" name="edu1">
-  <option value="0">专科</option>
-  <option value="1">大专</option>
-  <option value="2">本科</option>
-  <option value="3" selected>硕士</option>
-  <option value="4">博士</option>
-  <option value="5">教授</option>
+<select id="edu" name="edu">
+  <option value="0">初中</option>
+  <option value="1">高中</option>
+  <option value="2">中技</option>
+  <option value="3">中专</option>
+  <option value="4">大专</option>
+  <option value="5">本科</option>
+  <option value="6">硕士</option>
+  <option value="7">博士</option>
+  <option value="8">博士后</option>
+  <option value="9">教授</option>
 </select>
-<select id="edu2" name="edu2">
-  <option value="0">大专</option>
-  <option value="1">本科</option>
-  <option value="2">硕士</option>
-  <option value="3">博士</option>
-  <option value="4">教授</option>
-</select>
-<select id="edu3" name="edu3">
-  <option value="0">大专</option>
-  <option value="1">本科</option>
-  <option value="2">硕士</option>
-</select>
-
-<select id="province" name="province">
-  <option value="0">河南</option>
-  <option value="1">湖南</option>
-  <option value="2">河北</option>
-  <option value="3">广东</option>
+<select id="salary" name="salary">
+  <option value="0">面议</option>
+  <option value="1">1000以下</option>
+  <option value="2">1000-2000</option>
+  <option value="3">2000-3000</option>
+  <option value="4">3000-5000</option>
+  <option value="5">5000-6000</option>
+  <option value="6">6000-8000</option>
+  <option value="7">8000-10000</option>
+  <option value="8">10000-20000</option>
+  <option value="9">20000以上</option>
 </select>
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="js/jquery.selectlist.js"></script>
@@ -40,9 +37,7 @@
 		$('select').selectlist({
 			zIndex: 10,
 			width: 300,
-			height: 40,
-			border: '1px solid #ccccc',
-			showMaxHeight: 400,
+			height: 40
 		});		
 	})
 </script>
