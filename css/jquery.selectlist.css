@@ -52,6 +52,7 @@
     position: absolute;
     left: -1px;
     top: 35px;
+    overflow: hidden;
   }
   .select-list ul{
     margin: 0;
