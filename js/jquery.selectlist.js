@@ -227,7 +227,7 @@
             //设置模拟选择列表外层样式
             $(selectID).css({
                 'z-index': that.setStyleProperty(that.settings.zIndex),
-                width: that.setStyleProperty(that.settings.width) + 'px',
+                width: that.setStyleProperty(that.settings.width) - 2 + 'px',
                 height: that.setStyleProperty(that.settings.height) + 'px'
             });
             
@@ -306,6 +306,7 @@
             var that = this,
                 $this = $(element),
                 showSpeed = that.settings.speed,
+                border = that.settings.border,
                 selectID = '#' + that.getSelectID($this),
                 selectName = that.getSelectName($this),
                 selectedIndex = that.getSelectedIndex($this),
@@ -317,9 +318,17 @@
                     .click(function(event){
                         event.stopPropagation();
                         $(this).children('.select-list').slideToggle(showSpeed);
+                        if(that.settings.border){
+                            $(this).css({border:border});
+                        }else{
+                            $(this).addClass('focus');
+                        }
                     })
                     .on('focusin','input[type="button"]',function(){
                         $('.select-wrapper').children('.select-list').slideUp(showSpeed);
+                        if($('.select-wrapper').hasClass('focus')){
+                            $('.select-wrapper').removeClass('focus');
+                        }
                     })
                     .on('keyup','input[type="button"]',function(event){
                         //缓存第一个被选中的值
@@ -383,10 +392,15 @@
                         .parent().parent().slideUp(showSpeed)
                         .prev().val($(this).text())
                         .siblings('input[type="hidden"]').val($(this).attr('data-value'));
+
+                    if($('.select-wrapper').hasClass('focus')){
+                        $('.select-wrapper').removeClass('focus');
+                    }
                 
                     if($.isFunction(that.settings.onChange)){
                         that.settings.onChange();
                     }
+
                     return false;
                 }).hover(function(){
                     $(this).addClass('selected').siblings().removeClass('selected');
@@ -394,6 +408,9 @@
 
                 $(document).on('click',function(){
                     $(this).find('.select-list').slideUp(showSpeed);
+                    if($('.select-wrapper').hasClass('focus')){
+                        $('.select-wrapper').removeClass('focus');
+                    }
                 })
                                
             }else{

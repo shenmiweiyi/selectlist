@@ -9,22 +9,27 @@
     *float: left;
     *margin-right: 10px;
     background: #fff;
+    border-radius: 3px;
+    border: 1px solid #e3e3e3;
+  }
+  .select-wrapper.focus{
+    border: 1px solid #61b988;
   }
   .select-button{
     font: normal 14px '\5FAE\8F6F\96C5\9ED1';
     width: 238px;
     height: 34px;
-    border: 1px solid #e3e3e3;
+    border: 0;
     border-radius: 3px;
     background: #fff;
     cursor: pointer;
-    padding-left: 10px;
+    padding: 0 35px 0 10px;
     overflow: hidden;
     text-align: left;
     outline: none;
-  }
-  .select-button:focus{
-    border: 1px solid #61b988;
+    white-space: nowrap;
+    word-break: keep-all;
+    text-overflow: ellipsis;
   }
   .select-down{
     position: absolute;
