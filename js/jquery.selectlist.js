@@ -402,8 +402,16 @@
                     }
 
                     return false;
-                }).hover(function(){
+                }).hover(function(e){
                     $(this).addClass('selected').siblings().removeClass('selected');
+                }).mouseenter(function(event){
+                    var target = event.target,
+                        realWidth =  target.offsetWidth,
+                        wrapperWidth = target.scrollWidth,
+                        text = $(target).text();
+                    if(realWidth < wrapperWidth){
+                         $(target).attr( "title", text);
+                    }
                 })
 
                 $(document).on('click',function(){
