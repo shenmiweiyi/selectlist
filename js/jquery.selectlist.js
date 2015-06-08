@@ -311,18 +311,27 @@
                 selectName = that.getSelectName($this),
                 selectedIndex = that.getSelectedIndex($this),
                 selectLength = that.getOptionCount($this),
-                $selectItem = $(selectID + ' li');
+                selectBtn = $(selectID + ' input[type="button"]'),
+                selectItem = $(selectID + ' li');
             
             if(that.settings.enable){
                 $(selectID)
                     .click(function(event){
                         event.stopPropagation();
                         $(this).children('.select-list').slideToggle(showSpeed);
+
                         if(that.settings.border){
                             $(this).css({border:border});
                         }else{
                             $(this).addClass('focus');
                         }
+
+                        $(this).find('li').each(function(){
+                            if($(this).text() === selectBtn.val()){
+                                $(this).addClass('selected').siblings().removeClass('selected');
+                            }
+                        })
+
                     })
                     .on('focusin','input[type="button"]',function(){
                         $('.select-wrapper').children('.select-list').slideUp(showSpeed);
@@ -385,7 +394,7 @@
                     .children('.select-button').removeAttr('disabled');
                     
                 //绑定单击选项事件
-                $(selectID + ' li').on('click',function(event){
+                selectItem.on('click',function(event){
                     event.stopPropagation();                    
                     $(this)
                         .addClass('selected').siblings().removeClass('selected')
@@ -402,7 +411,7 @@
                     }
 
                     return false;
-                }).hover(function(e){
+                }).hover(function(){
                     $(this).addClass('selected').siblings().removeClass('selected');
                 }).mouseenter(function(event){
                     var target = event.target,
