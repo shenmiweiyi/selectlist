@@ -18,13 +18,13 @@
             border: null,  //选择列表边框
             borderRadius: null,  //选择列表圆角
             showMaxHeight: null,  //选择列表显示最大高度
-            optionHeight: null || 34,   //选择列表单项高度
-            triangleSize: null || 6,   //右侧小三角大小
-            triangleColor: null || '#333',  //右侧小三角颜色
+            optionHeight: 34,   //选择列表单项高度
+            triangleSize: 6,   //右侧小三角大小
+            triangleColor: '#333',  //右侧小三角颜色
             
             topPosition: false,  //选择列表项在列表框上部显示,默认在下边显示
-            speed: null || 100,   //选择列表框显示动画速度（毫秒）
-            onChange: null  //自定义模拟选择列表项change事件
+            speed: 100,   //选择列表框显示动画速度（毫秒）
+            onChange: function(){}  //自定义模拟选择列表项change事件
         };
 
     function SelectList(element,options){
@@ -350,7 +350,7 @@
                                     .val($selectedItem.text())
                                     .prev().prev().val($selectedItem.attr('data-value'));
                                 if ($.isFunction(that.settings.onChange)) {
-                                    that.settings.onChange();
+                                    that.settings.onChange.call(that);
                                 }
                                 break;
                             //Esc
@@ -407,7 +407,7 @@
                     }
                 
                     if($.isFunction(that.settings.onChange)){
-                        that.settings.onChange();
+                        that.settings.onChange.call(that);
                     }
 
                     return false;
